@@ -127,7 +127,7 @@ export function ContactSection() {
                       name="name" 
                       required 
                       className="bg-background border-border focus:border-emerald-500 focus:ring-emerald-500" 
-                      placeholder="Uw naam"
+                      placeholder={t("contact.name.placeholder")}
                     />
                   </div>
                   <div>
@@ -140,7 +140,7 @@ export function ContactSection() {
                       type="email" 
                       required 
                       className="bg-background border-border focus:border-emerald-500 focus:ring-emerald-500"
-                      placeholder="uw@email.com"
+                      placeholder={t("contact.email.placeholder")}
                     />
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export function ContactSection() {
                       type="tel" 
                       required 
                       className="bg-background border-border focus:border-emerald-500 focus:ring-emerald-500"
-                      placeholder="+31 6 12 34 56 78"
+                      placeholder={t("contact.phone.placeholder")}
                     />
                   </div>
                   <div>
@@ -167,7 +167,7 @@ export function ContactSection() {
                       id="company" 
                       name="company" 
                       className="bg-background border-border focus:border-emerald-500 focus:ring-emerald-500"
-                      placeholder="Uw bedrijf"
+                      placeholder={t("contact.company.placeholder")}
                     />
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export function ContactSection() {
                     rows={5} 
                     required 
                     className="bg-background border-border focus:border-emerald-500 focus:ring-emerald-500 resize-none"
-                    placeholder="Vertel ons meer over uw project..."
+                    placeholder={t("contact.message.placeholder")}
                   />
                 </div>
 

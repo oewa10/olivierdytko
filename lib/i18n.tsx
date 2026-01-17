@@ -152,6 +152,11 @@ const translations: Translations = {
     nl: "Bedankt voor uw bericht! We nemen zo spoedig mogelijk contact met u op.",
     en: "Thank you for your message! We will contact you as soon as possible.",
   },
+  "contact.name.placeholder": { nl: "Uw naam", en: "Your name" },
+  "contact.email.placeholder": { nl: "uw@email.com", en: "your@email.com" },
+  "contact.phone.placeholder": { nl: "+31 6 12 34 56 78", en: "+31 6 12 34 56 78" },
+  "contact.company.placeholder": { nl: "Uw bedrijf", en: "Your company" },
+  "contact.message.placeholder": { nl: "Vertel ons meer over uw project...", en: "Tell us more about your project..." },
 
   // Footer
   "footer.rights": {
