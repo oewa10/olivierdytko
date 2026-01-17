@@ -65,8 +65,8 @@ export function SpecializationsGridSection() {
           <div className="w-16 h-1 bg-emerald-500" />
         </div>
 
-        {/* 3x3 Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Desktop: 3x3 Grid Layout */}
+        <div className="hidden md:grid grid-cols-3 gap-6">
           {/* Row 1: 3 cards */}
           <SpecCard specKey="groundworkers" Icon={Pickaxe} isVisible={isVisible} delay={100} t={t} />
           <SpecCard specKey="carpenters" Icon={Hammer} isVisible={isVisible} delay={200} t={t} />
@@ -105,10 +105,21 @@ export function SpecializationsGridSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          {/* Row 3: 2 cards */}
+          {/* Row 3: 3 cards */}
           <SpecCard specKey="window" Icon={SquareStack} isVisible={isVisible} delay={700} t={t} />
           <SpecCard specKey="scaffolders" Icon={Layers} isVisible={isVisible} delay={800} t={t} />
           <SpecCard specKey="electricians" Icon={Zap} isVisible={isVisible} delay={900} t={t} />
+        </div>
+
+        {/* Mobile: Show all 7 cards without images */}
+        <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <SpecCard specKey="groundworkers" Icon={Pickaxe} isVisible={isVisible} delay={100} t={t} />
+          <SpecCard specKey="carpenters" Icon={Hammer} isVisible={isVisible} delay={200} t={t} />
+          <SpecCard specKey="helpers" Icon={HardHat} isVisible={isVisible} delay={300} t={t} />
+          <SpecCard specKey="plumbers" Icon={Wrench} isVisible={isVisible} delay={400} t={t} />
+          <SpecCard specKey="window" Icon={SquareStack} isVisible={isVisible} delay={500} t={t} />
+          <SpecCard specKey="scaffolders" Icon={Layers} isVisible={isVisible} delay={600} t={t} />
+          <SpecCard specKey="electricians" Icon={Zap} isVisible={isVisible} delay={700} t={t} />
         </div>
       </div>
     </section>
