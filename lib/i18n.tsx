@@ -15,6 +15,7 @@ const translations: Translations = {
   // Navigation
   "nav.about": { nl: "Over Ons", en: "About Us" },
   "nav.services": { nl: "Diensten", en: "Services" },
+  "nav.process": { nl: "Hoe Wij Werken", en: "How We Work" },
   "nav.specializations": { nl: "Vakgebieden", en: "Specializations" },
   "nav.contact": { nl: "Contact", en: "Contact" },
 
