@@ -94,15 +94,33 @@ const translations: Translations = {
     en: "No hassle with contracts, insurance, or administration. We take care of all administrative tasks so you can focus on what really matters: successfully completing your construction project.",
   },
 
+  // Process Steps
+  "process.title": { nl: "Hoe Wij Werken", en: "How We Work" },
+  "process.step1.title": { nl: "Contact", en: "Contact" },
+  "process.step1.desc": { nl: "Neem contact met ons op en bespreek uw projectbehoeften.", en: "Get in touch and discuss your project needs." },
+  "process.step2.title": { nl: "Matching", en: "Matching" },
+  "process.step2.desc": { nl: "Wij selecteren de beste vakmensen voor uw project.", en: "We select the best professionals for your project." },
+  "process.step3.title": { nl: "Plaatsing", en: "Placement" },
+  "process.step3.desc": { nl: "Snelle inzet van gekwalificeerde ZZP'ers op locatie.", en: "Quick deployment of qualified freelancers on site." },
+  "process.step4.title": { nl: "Ondersteuning", en: "Support" },
+  "process.step4.desc": { nl: "Continue begeleiding gedurende het hele project.", en: "Continuous guidance throughout the entire project." },
+
   // Specializations
   "spec.title": { nl: "Onze Vakgebieden", en: "Our Specializations" },
   "spec.groundworkers": { nl: "Grondwerkers", en: "Groundworkers" },
+  "spec.groundworkers.desc": { nl: "Fundament- en graafwerkzaamheden voor elk project.", en: "Foundation and excavation work for any project." },
   "spec.carpenters": { nl: "Timmerlieden", en: "Carpenters" },
+  "spec.carpenters.desc": { nl: "Vakkundige houtbewerking en constructiewerk.", en: "Expert woodworking and construction work." },
   "spec.helpers": { nl: "Bouw Hulpen", en: "Construction Helpers" },
+  "spec.helpers.desc": { nl: "Betrouwbare ondersteuning op elke bouwplaats.", en: "Reliable support on every construction site." },
   "spec.plumbers": { nl: "Loodgieters", en: "Plumbers" },
+  "spec.plumbers.desc": { nl: "Professionele installatie van leidingwerk.", en: "Professional pipe and plumbing installation." },
   "spec.window": { nl: "Kozijnmonteurs", en: "Window Fitters" },
+  "spec.window.desc": { nl: "Precisie-installatie van ramen en kozijnen.", en: "Precision installation of windows and frames." },
   "spec.scaffolders": { nl: "Steigerwerkers", en: "Scaffolders" },
+  "spec.scaffolders.desc": { nl: "Veilige steigerconstructies voor elk project.", en: "Safe scaffolding structures for any project." },
   "spec.electricians": { nl: "Elektriciens", en: "Electricians" },
+  "spec.electricians.desc": { nl: "Complete elektrische installaties en onderhoud.", en: "Complete electrical installations and maintenance." },
 
   // Why Choose Us
   "why.title": { nl: "Waarom Oliver Dytko", en: "Why Choose Us" },
