@@ -122,6 +122,12 @@ const translations: Translations = {
   "spec.scaffolders.desc": { nl: "Veilige steigerconstructies voor elk project.", en: "Safe scaffolding structures for any project." },
   "spec.electricians": { nl: "Elektriciens", en: "Electricians" },
   "spec.electricians.desc": { nl: "Complete elektrische installaties en onderhoud.", en: "Complete electrical installations and maintenance." },
+  "spec.painters": { nl: "Schilders", en: "Painters" },
+  "spec.painters.desc": { nl: "Professionele schilderwerk voor binnen en buiten.", en: "Professional painting services for interior and exterior." },
+  "spec.roofers": { nl: "Dakdekkers", en: "Roofers" },
+  "spec.roofers.desc": { nl: "Vakkundige installatie en reparatie van daken.", en: "Expert installation and repair of roofs." },
+  "spec.concrete": { nl: "Betontimmermans", en: "Concrete Carpenters" },
+  "spec.concrete.desc": { nl: "Specialisten in betonconstructies en bekisting.", en: "Specialists in concrete structures and formwork." },
 
   // Why Choose Us
   "why.title": { nl: "Waarom Oliver Dytko", en: "Why Choose Us" },
@@ -160,6 +166,16 @@ const translations: Translations = {
   "contact.message.placeholder": { nl: "Vertel ons meer over uw project...", en: "Tell us more about your project..." },
 
   // Footer
+  "footer.navigation": { nl: "Navigatie", en: "Navigation" },
+  "footer.connect": { nl: "Volg Ons", en: "Connect With Us" },
+  "footer.dba": { nl: "DBA Regels", en: "DBA Rules" },
+  "footer.dba.desc": { 
+    nl: "Oliver Dytko volgt de DBA regels voor ZZP'ers in de bouw.", 
+    en: "Oliver Dytko follows DBA rules for self-employed contractors in construction." 
+  },
+  "footer.dba.link": { nl: "Meer informatie", en: "More information" },
+  "footer.privacy": { nl: "Privacy Statement", en: "Privacy Statement" },
+  "footer.terms": { nl: "Algemene Voorwaarden", en: "Terms and Conditions" },
   "footer.rights": {
     nl: "Alle rechten voorbehouden",
     en: "All rights reserved",
@@ -175,7 +191,24 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("nl")
+  // Initialize language from localStorage if available, otherwise default to "nl"
+  const [language, setLanguageState] = useState<Language>(() => {
+    // Only access localStorage on the client side
+    if (typeof window !== 'undefined') {
+      const savedLanguage = localStorage.getItem('preferredLanguage') as Language
+      return savedLanguage === 'en' ? 'en' : 'nl'
+    }
+    return 'nl'
+  })
+
+  // Wrapper for setLanguage that also updates localStorage
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang)
+    // Only access localStorage on the client side
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferredLanguage', lang)
+    }
+  }
 
   const t = (key: string): string => {
     const translation = translations[key]
