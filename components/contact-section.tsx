@@ -54,8 +54,8 @@ export function ContactSection() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-emerald-500 transition-colors">{t("contact.phone")}</h3>
-                  <a href="tel:+31612345678" className="text-muted-foreground hover:text-emerald-500 transition-colors font-medium">
-                    +31 6 12 34 56 78
+                  <a href="tel:+31620180034" className="text-muted-foreground hover:text-emerald-500 transition-colors font-medium">
+                    +31620180034
                   </a>
                 </div>
               </div>
@@ -96,8 +96,8 @@ export function ContactSection() {
                   <MapPin className="h-6 w-6 text-emerald-500" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-foreground mb-2 group-hover:text-emerald-500 transition-colors">Adres</h3>
-                  <p className="text-muted-foreground font-medium">Amsterdam, Nederland</p>
+                  <h3 className="font-semibold text-foreground mb-2 group-hover:text-emerald-500 transition-colors">{t("contact.address")}</h3>
+                  <p className="text-muted-foreground font-medium">Vergiliusstraat 43, 1502 NN Zaandam</p>
                 </div>
               </div>
             </div>
