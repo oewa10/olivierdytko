@@ -128,6 +128,8 @@ const translations: Translations = {
   "spec.roofers.desc": { nl: "Vakkundige installatie en reparatie van daken.", en: "Expert installation and repair of roofs." },
   "spec.concrete": { nl: "Betontimmermans", en: "Concrete Carpenters" },
   "spec.concrete.desc": { nl: "Specialisten in betonconstructies en bekisting.", en: "Specialists in concrete structures and formwork." },
+  "spec.plasterers": { nl: "Stukkadors", en: "Plasterers" },
+  "spec.plasterers.desc": { nl: "Vakkundig stucwerk voor wanden en plafonds.", en: "Professional plastering for walls and ceilings." },
 
   // Why Choose Us
   "why.title": { nl: "Waarom Oliver Dytko", en: "Why Choose Us" },

@@ -2,7 +2,7 @@
 
 import { useI18n } from "@/lib/i18n"
 import { LanguageToggle } from "@/components/language-toggle"
-import { Linkedin, Facebook, Instagram, Phone, Mail, MapPin, Building2, FileText } from "lucide-react"
+import { Phone, Mail, MapPin, Building2, FileText } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -14,12 +14,6 @@ export function Footer() {
     { href: "#process", label: t("nav.process") },
     { href: "#specializations-grid", label: t("nav.specializations") },
     { href: "#contact", label: t("nav.contact") },
-  ]
-
-  const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61585198233871", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
   ]
   
   const companyDetails = [
@@ -110,26 +104,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social & Language */}
+          {/* Language */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("footer.connect")}</h3>
-            <div className="flex gap-3 mb-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target={social.href !== "#" ? "_blank" : undefined}
-                    rel={social.href !== "#" ? "noopener noreferrer" : undefined}
-                    className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
-                    aria-label={social.label}
-                  >
-                    <Icon className="h-4 w-4" />
-                  </a>
-                )
-              })}
-            </div>
             <LanguageToggle />
           </div>
         </div>

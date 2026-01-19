@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useI18n } from "@/lib/i18n"
-import { Pickaxe, Hammer, HardHat, Wrench, SquareStack, Layers, Zap, Paintbrush, Home, Construction } from "lucide-react"
+import { Pickaxe, Hammer, HardHat, Wrench, SquareStack, Layers, Zap, Paintbrush, Home, Construction, Droplets } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const specializations = [
@@ -16,6 +16,7 @@ const specializations = [
   { key: "painters", icon: Paintbrush },
   { key: "roofers", icon: Home },
   { key: "concrete", icon: Construction },
+  { key: "plasterers", icon: Droplets },
 ]
 
 function SpecCard({ 
@@ -68,19 +69,22 @@ export function SpecializationsGridSection() {
           <div className="w-16 h-1 bg-emerald-500" />
         </div>
 
-        {/* Desktop: 4x3 Grid Layout */}
-        <div className="hidden md:grid grid-cols-3 gap-6">
-          {/* Row 1: 3 cards */}
+        {/* Desktop: 3x4 Grid Layout */}
+        <div className="hidden md:grid grid-cols-4 gap-6">
+          {/* Row 1: 4 cards */}
           <SpecCard specKey="groundworkers" Icon={Pickaxe} isVisible={isVisible} delay={100} t={t} />
           <SpecCard specKey="carpenters" Icon={Hammer} isVisible={isVisible} delay={200} t={t} />
           <SpecCard specKey="helpers" Icon={HardHat} isVisible={isVisible} delay={300} t={t} />
+          <SpecCard specKey="plumbers" Icon={Wrench} isVisible={isVisible} delay={400} t={t} />
 
-          {/* Row 2: Image + Card + Image */}
+          {/* Row 2: 3 cards + 1 picture in the middle */}
+          <SpecCard specKey="window" Icon={SquareStack} isVisible={isVisible} delay={500} t={t} />
+          <SpecCard specKey="scaffolders" Icon={Layers} isVisible={isVisible} delay={600} t={t} />
           <div
             className={`rounded-xl overflow-hidden transition-all duration-700 relative group ${
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
-            style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
+            style={{ transitionDelay: isVisible ? "700ms" : "0ms" }}
           >
             <Image
               src="/construction1.jpg"
@@ -91,32 +95,13 @@ export function SpecializationsGridSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-          <SpecCard specKey="plumbers" Icon={Wrench} isVisible={isVisible} delay={500} t={t} />
-          <div
-            className={`rounded-xl overflow-hidden transition-all duration-700 relative group ${
-              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            }`}
-            style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
-          >
-            <Image
-              src="/construction2.jpg"
-              alt="Construction work"
-              width={400}
-              height={300}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+          <SpecCard specKey="electricians" Icon={Zap} isVisible={isVisible} delay={800} t={t} />
 
-          {/* Row 3: 3 cards */}
-          <SpecCard specKey="window" Icon={SquareStack} isVisible={isVisible} delay={700} t={t} />
-          <SpecCard specKey="scaffolders" Icon={Layers} isVisible={isVisible} delay={800} t={t} />
-          <SpecCard specKey="electricians" Icon={Zap} isVisible={isVisible} delay={900} t={t} />
-          
-          {/* Row 4: 3 new cards */}
-          <SpecCard specKey="painters" Icon={Paintbrush} isVisible={isVisible} delay={1000} t={t} />
-          <SpecCard specKey="roofers" Icon={Home} isVisible={isVisible} delay={1100} t={t} />
-          <SpecCard specKey="concrete" Icon={Construction} isVisible={isVisible} delay={1200} t={t} />
+          {/* Row 3: 4 cards */}
+          <SpecCard specKey="painters" Icon={Paintbrush} isVisible={isVisible} delay={900} t={t} />
+          <SpecCard specKey="roofers" Icon={Home} isVisible={isVisible} delay={1000} t={t} />
+          <SpecCard specKey="concrete" Icon={Construction} isVisible={isVisible} delay={1100} t={t} />
+          <SpecCard specKey="plasterers" Icon={Droplets} isVisible={isVisible} delay={1200} t={t} />
         </div>
 
         {/* Mobile: Show all cards without images */}
@@ -131,6 +116,7 @@ export function SpecializationsGridSection() {
           <SpecCard specKey="painters" Icon={Paintbrush} isVisible={isVisible} delay={800} t={t} />
           <SpecCard specKey="roofers" Icon={Home} isVisible={isVisible} delay={900} t={t} />
           <SpecCard specKey="concrete" Icon={Construction} isVisible={isVisible} delay={1000} t={t} />
+          <SpecCard specKey="plasterers" Icon={Droplets} isVisible={isVisible} delay={1100} t={t} />
         </div>
       </div>
     </section>
