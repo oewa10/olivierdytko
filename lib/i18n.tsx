@@ -29,7 +29,7 @@ const translations: Translations = {
   // About
   "about.title": { nl: "Over Oliver Dytko", en: "About Oliver Dytko" },
   "about.description": {
-    nl: "Oliver Dytko is een gespecialiseerde uitzendgroep die vakbekwame ZZP'ers verbindt met projecten in de bouwsector. Met jarenlange ervaring en een uitgebreid netwerk van gekwalificeerde professionals, zorgen wij voor de perfecte match tussen opdrachtgevers en vakmannen. Onze focus ligt op betrouwbaarheid, kwaliteit en persoonlijke service. Wij begrijpen de unieke eisen van de bouwsector en leveren professionals die direct inzetbaar zijn en bijdragen aan het succes van uw project.",
+    nl: "Oliver Dytko is een gespecialiseerde arbeidsbemiddeling die vakbekwame ZZP'ers verbindt met projecten in de bouwsector. Met jarenlange ervaring en een uitgebreid netwerk van gekwalificeerde professionals, zorgen wij voor de perfecte match tussen opdrachtgevers en vakmannen. Onze focus ligt op betrouwbaarheid, kwaliteit en persoonlijke service. Wij begrijpen de unieke eisen van de bouwsector en leveren professionals die direct inzetbaar zijn en bijdragen aan het succes van uw project.",
     en: "Oliver Dytko is a specialized staffing agency connecting skilled freelancers with projects in the construction sector. With years of experience and an extensive network of qualified professionals, we ensure the perfect match between clients and craftsmen. Our focus is on reliability, quality, and personal service. We understand the unique requirements of the construction industry and provide professionals who are immediately deployable and contribute to the success of your project.",
   },
 

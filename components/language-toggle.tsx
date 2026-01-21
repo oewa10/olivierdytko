@@ -17,7 +17,7 @@ export function LanguageToggle() {
   }, [])
 
   return (
-    <div className={`flex items-center gap-0 rounded-full p-1 transition-all duration-300 border ${
+    <div className={`inline-flex items-center gap-0 rounded-full transition-all duration-300 border ${
       isScrolled 
         ? "bg-emerald-900/10 border-emerald-500/50" 
         : "bg-white/10 border-white/30"

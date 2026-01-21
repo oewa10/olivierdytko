@@ -16,14 +16,48 @@ export function ContactSection() {
   const [isLoading, setIsLoading] = useState(false)
   const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.1 })
 
+  const [error, setError] = useState<string | null>(null)
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsLoading(false)
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 5000)
+    setError(null)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      company: formData.get('company') as string || undefined,
+      message: formData.get('message') as string,
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Er is een fout opgetreden')
+      }
+
+      if (form) {
+        form.reset()
+      }
+      setIsSubmitted(true)
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Er is een fout opgetreden')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -117,6 +151,11 @@ export function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                    {error}
+                  </div>
+                )}
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
