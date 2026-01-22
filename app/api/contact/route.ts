@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY!
-const SENDER_EMAIL = 'Info@Oliverdytko-arbeidsbemiddeling.nl'
-const SENDER_NAME = 'Oliver Dytko Arbeidsbemiddeling'
+const SENDER_EMAIL = 'info@oliverdytko-arbeidsbemiddeling.nl'
+const SENDER_NAME = 'Oliver Dytko'
 
 interface ContactFormData {
   name: string
@@ -194,9 +194,37 @@ function getAdminNotificationEmail(data: ContactFormData): string {
 
 async function sendEmail(to: string, toName: string, subject: string, htmlContent: string): Promise<boolean> {
   try {
-    console.log(`[Email] Sending to ${to} with subject: ${subject}`)
+    console.log(`[Email] ===== EMAIL SEND START =====`)
+    console.log(`[Email] To: ${to}`)
+    console.log(`[Email] To Name: ${toName}`)
+    console.log(`[Email] Subject: ${subject}`)
+    console.log(`[Email] From: ${SENDER_EMAIL} (${SENDER_NAME})`)
     console.log(`[Email] API Key present: ${!!BREVO_API_KEY}`)
     console.log(`[Email] Recipient email valid: ${/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)}`)
+    console.log(`[Email] HTML Content length: ${htmlContent.length}`)
+    
+    const payload = {
+      sender: {
+        name: SENDER_NAME,
+        email: SENDER_EMAIL,
+      },
+      to: [
+        {
+          email: to,
+          name: toName,
+        },
+      ],
+      subject: subject,
+      htmlContent: htmlContent,
+      replyTo: {
+        email: SENDER_EMAIL,
+        name: SENDER_NAME,
+      },
+    }
+    
+    console.log(`[Email] Payload keys:`, Object.keys(payload))
+    console.log(`[Email] Sender object:`, payload.sender)
+    console.log(`[Email] To array:`, payload.to)
     
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
@@ -205,39 +233,38 @@ async function sendEmail(to: string, toName: string, subject: string, htmlConten
         'api-key': BREVO_API_KEY,
         'content-type': 'application/json',
       },
-      body: JSON.stringify({
-        sender: {
-          name: SENDER_NAME,
-          email: SENDER_EMAIL,
-        },
-        to: [
-          {
-            email: to,
-            name: toName,
-          },
-        ],
-        subject: subject,
-        htmlContent: htmlContent,
-        replyTo: {
-          email: SENDER_EMAIL,
-          name: SENDER_NAME,
-        },
-      }),
+      body: JSON.stringify(payload),
     })
 
-    const responseData = await response.json()
+    const responseText = await response.text()
+    console.log(`[Email] Raw response text: ${responseText}`)
+    
+    let responseData
+    try {
+      responseData = JSON.parse(responseText)
+    } catch {
+      responseData = { raw: responseText }
+    }
+    
     console.log(`[Email] Response status: ${response.status}`)
-    console.log(`[Email] Response data:`, responseData)
+    console.log(`[Email] Response headers:`, {
+      'content-type': response.headers.get('content-type'),
+      'x-brevo-request-id': response.headers.get('x-brevo-request-id'),
+    })
+    console.log(`[Email] Response data:`, JSON.stringify(responseData, null, 2))
 
     if (!response.ok) {
-      console.error(`[Email] Brevo API error (${response.status}):`, responseData)
+      console.error(`[Email] ❌ Brevo API error (${response.status}):`, responseData)
       return false
     }
 
-    console.log(`[Email] Successfully sent to ${to}`)
+    console.log(`[Email] ✅ Successfully sent to ${to}`)
+    console.log(`[Email] Message ID: ${responseData.messageId}`)
+    console.log(`[Email] ===== EMAIL SEND END =====`)
     return true
   } catch (error) {
-    console.error('[Email] Error sending email:', error)
+    console.error('[Email] ❌ Error sending email:', error)
+    console.error('[Email] Error stack:', error instanceof Error ? error.stack : 'N/A')
     return false
   }
 }
