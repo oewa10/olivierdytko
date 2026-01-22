@@ -109,10 +109,10 @@ export function ContactSection() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-emerald-500 transition-colors">{t("contact.email")}</h3>
                   <a
-                    href="mailto:info@oliverdytko.nl"
+                    href="mailto:info@oliverdytko-arbeidsbemiddeling.nl"
                     className="text-muted-foreground hover:text-emerald-500 transition-colors font-medium break-all"
                   >
-                    info@oliverdytko.nl
+                    info@oliverdytko-arbeidsbemiddeling.nl
                   </a>
                 </div>
               </div>
