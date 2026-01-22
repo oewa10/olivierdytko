@@ -37,7 +37,10 @@ export const metadata: Metadata = {
     description: "Professionele bemiddeling van vakbekwame ZZP'ers in de bouwsector.",
   },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
     apple: "/apple-icon.png",
   },
 }
