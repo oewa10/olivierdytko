@@ -15,70 +15,73 @@ interface ContactFormData {
 function getCustomerConfirmationEmail(data: ContactFormData): string {
   return `
 <!DOCTYPE html>
-<html lang="nl">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bedankt voor uw bericht</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5;">
-  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+<body style="margin: 0; padding: 0; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f1f5f9; padding: 40px 20px;">
     <tr>
-      <td align="center" style="padding: 40px 0;">
-        <table role="presentation" style="width: 600px; max-width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
           <!-- Header -->
           <tr>
-            <td style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); padding: 40px 30px; text-align: center;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">Oliver Dytko</h1>
-              <p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px; letter-spacing: 1px;">ARBEIDSBEMIDDELING</p>
+            <td style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); padding: 40px; text-align: center;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">
+                Bedankt voor uw bericht! ✨
+              </h1>
             </td>
           </tr>
           
           <!-- Content -->
           <tr>
-            <td style="padding: 40px 30px;">
-              <h2 style="margin: 0 0 20px 0; color: #1f2937; font-size: 24px;">Bedankt voor uw bericht, ${data.name}!</h2>
-              
-              <p style="margin: 0 0 20px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
+            <td style="padding: 40px;">
+              <p style="color: #1e293b; font-size: 18px; font-weight: 500; margin: 0 0 8px 0;">
+                Hallo ${data.name.split(' ')[0]},
+              </p>
+              <p style="color: #475569; font-size: 15px; line-height: 1.7; margin: 0 0 24px 0;">
                 Wij hebben uw bericht in goede orde ontvangen. Ons team zal zo spoedig mogelijk contact met u opnemen.
               </p>
               
-              <div style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0;">
-                <h3 style="margin: 0 0 15px 0; color: #059669; font-size: 16px;">Uw bericht:</h3>
-                <p style="margin: 0; color: #374151; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${data.message}</p>
+              <!-- Your message -->
+              <div style="margin-bottom: 24px;">
+                <h3 style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0;">Uw bericht</h3>
+                <div style="background-color: #f8fafc; border-left: 3px solid #10b981; padding: 16px 20px; border-radius: 0 8px 8px 0;">
+                  <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; white-space: pre-wrap;">${data.message}</p>
+                </div>
               </div>
               
-              <p style="margin: 20px 0 0 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
-                Heeft u dringende vragen? Neem dan direct contact met ons op:
-              </p>
-              
-              <table role="presentation" style="margin: 20px 0; border-collapse: collapse;">
-                <tr>
-                  <td style="padding: 8px 0;">
-                    <span style="color: #10b981; font-weight: 600;">📞 Telefoon:</span>
-                    <a href="tel:+31620180034" style="color: #1f2937; text-decoration: none; margin-left: 8px;">+31 6 20 18 00 34</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0;">
-                    <span style="color: #10b981; font-weight: 600;">✉️ Email:</span>
-                    <a href="mailto:Info@Oliverdytko-arbeidsbemiddeling.nl" style="color: #1f2937; text-decoration: none; margin-left: 8px;">Info@Oliverdytko-arbeidsbemiddeling.nl</a>
-                  </td>
-                </tr>
-              </table>
+              <!-- Contact Info -->
+              <div style="background-color: #f0fdf4; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                <h3 style="color: #059669; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 16px 0;">
+                  Contactgegevens
+                </h3>
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="padding-bottom: 12px;">
+                      <span style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Telefoon</span><br>
+                      <a href="tel:+31620180034" style="color: #059669; font-size: 15px; font-weight: 500; text-decoration: none;">+31 6 20 18 00 34</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Email</span><br>
+                      <a href="mailto:Info@Oliverdytko-arbeidsbemiddeling.nl" style="color: #059669; font-size: 15px; font-weight: 500; text-decoration: none;">Info@Oliverdytko-arbeidsbemiddeling.nl</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </td>
           </tr>
           
           <!-- Footer -->
           <tr>
-            <td style="background-color: #1f2937; padding: 30px; text-align: center;">
-              <p style="margin: 0 0 10px 0; color: #9ca3af; font-size: 14px;">
-                Oliver Dytko Arbeidsbemiddeling
+            <td style="background-color: #f8fafc; padding: 24px; text-align: center; border-top: 1px solid #e2e8f0;">
+              <p style="color: #64748b; font-size: 13px; margin: 0 0 8px 0;">
+                <a href="https://oliverdytko-arbeidsbemiddeling.nl" style="color: #10b981; text-decoration: none;">oliverdytko-arbeidsbemiddeling.nl</a>
               </p>
-              <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 12px;">
-                Vergiliusstraat 43, 1502 NN Zaandam
-              </p>
-              <p style="margin: 0; color: #6b7280; font-size: 12px;">
+              <p style="color: #94a3b8; font-size: 12px; margin: 0;">
                 © ${new Date().getFullYear()} Oliver Dytko. Alle rechten voorbehouden.
               </p>
             </td>
@@ -88,88 +91,96 @@ function getCustomerConfirmationEmail(data: ContactFormData): string {
     </tr>
   </table>
 </body>
-</html>
-`
+</html>`;
 }
 
 function getAdminNotificationEmail(data: ContactFormData): string {
   return `
 <!DOCTYPE html>
-<html lang="nl">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nieuw Contactformulier Bericht</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5;">
-  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+<body style="margin: 0; padding: 0; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f1f5f9; padding: 40px 20px;">
     <tr>
-      <td align="center" style="padding: 40px 0;">
-        <table role="presentation" style="width: 600px; max-width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
           <!-- Header -->
           <tr>
-            <td style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); padding: 40px 30px; text-align: center;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">Nieuw Bericht</h1>
-              <p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px;">Via het contactformulier</p>
+            <td style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); padding: 40px; text-align: center;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">
+                Nieuw Contactbericht
+              </h1>
             </td>
           </tr>
           
           <!-- Content -->
           <tr>
-            <td style="padding: 40px 30px;">
-              <h2 style="margin: 0 0 25px 0; color: #1f2937; font-size: 20px; border-bottom: 2px solid #10b981; padding-bottom: 10px;">Contactgegevens</h2>
-              
-              <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+            <td style="padding: 40px;">
+              <!-- Contact Info Card -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; border-radius: 12px; margin-bottom: 24px;">
                 <tr>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-                    <span style="color: #6b7280; font-size: 14px; display: inline-block; width: 100px;">Naam:</span>
-                    <span style="color: #1f2937; font-size: 14px; font-weight: 600;">${data.name}</span>
+                  <td style="padding: 24px;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="padding-bottom: 12px;">
+                          <span style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Naam</span><br>
+                          <span style="color: #1e293b; font-size: 16px; font-weight: 500;">${data.name}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding-bottom: 12px;">
+                          <span style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Email</span><br>
+                          <a href="mailto:${data.email}" style="color: #10b981; font-size: 16px; font-weight: 500; text-decoration: none;">${data.email}</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding-bottom: 12px;">
+                          <span style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Telefoon</span><br>
+                          <a href="tel:${data.phone}" style="color: #10b981; font-size: 16px; font-weight: 500; text-decoration: none;">${data.phone}</a>
+                        </td>
+                      </tr>
+                      ${data.company ? `
+                      <tr>
+                        <td>
+                          <span style="color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Bedrijf</span><br>
+                          <span style="color: #1e293b; font-size: 16px; font-weight: 500;">${data.company}</span>
+                        </td>
+                      </tr>
+                      ` : ''}
+                    </table>
                   </td>
                 </tr>
-                <tr>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-                    <span style="color: #6b7280; font-size: 14px; display: inline-block; width: 100px;">Email:</span>
-                    <a href="mailto:${data.email}" style="color: #059669; font-size: 14px; font-weight: 600; text-decoration: none;">${data.email}</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-                    <span style="color: #6b7280; font-size: 14px; display: inline-block; width: 100px;">Telefoon:</span>
-                    <a href="tel:${data.phone}" style="color: #059669; font-size: 14px; font-weight: 600; text-decoration: none;">${data.phone}</a>
-                  </td>
-                </tr>
-                ${data.company ? `
-                <tr>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-                    <span style="color: #6b7280; font-size: 14px; display: inline-block; width: 100px;">Bedrijf:</span>
-                    <span style="color: #1f2937; font-size: 14px; font-weight: 600;">${data.company}</span>
-                  </td>
-                </tr>
-                ` : ''}
               </table>
               
-              <h2 style="margin: 0 0 15px 0; color: #1f2937; font-size: 20px; border-bottom: 2px solid #10b981; padding-bottom: 10px;">Bericht</h2>
-              
-              <div style="background-color: #f9fafb; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px;">
-                <p style="margin: 0; color: #374151; font-size: 14px; line-height: 1.8; white-space: pre-wrap;">${data.message}</p>
+              <!-- Message -->
+              <div style="margin-bottom: 24px;">
+                <h3 style="color: #1e293b; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0;">Bericht</h3>
+                <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                  <p style="color: #475569; font-size: 15px; line-height: 1.7; margin: 0; white-space: pre-wrap;">${data.message}</p>
+                </div>
               </div>
               
-              <!-- Quick Actions -->
-              <div style="margin-top: 30px; text-align: center;">
-                <a href="mailto:${data.email}" style="display: inline-block; background-color: #059669; color: #ffffff; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-right: 10px;">Beantwoorden</a>
-                <a href="tel:${data.phone}" style="display: inline-block; background-color: #1f2937; color: #ffffff; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">Bellen</a>
-              </div>
+              <!-- Quick Reply Button -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center">
+                    <a href="mailto:${data.email}?subject=Re: Uw bericht" style="display: inline-block; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px;">
+                      Beantwoorden →
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
           <!-- Footer -->
           <tr>
-            <td style="background-color: #1f2937; padding: 20px 30px; text-align: center;">
-              <p style="margin: 0; color: #9ca3af; font-size: 12px;">
-                Dit bericht is verzonden via het contactformulier op oliverdytko-arbeidsbemiddeling.nl
-              </p>
-              <p style="margin: 8px 0 0 0; color: #6b7280; font-size: 12px;">
-                ${new Date().toLocaleString('nl-NL', { dateStyle: 'full', timeStyle: 'short' })}
+            <td style="background-color: #f8fafc; padding: 24px; text-align: center; border-top: 1px solid #e2e8f0;">
+              <p style="color: #94a3b8; font-size: 13px; margin: 0;">
+                Verzonden via het contactformulier op oliverdytko-arbeidsbemiddeling.nl
               </p>
             </td>
           </tr>
@@ -178,14 +189,14 @@ function getAdminNotificationEmail(data: ContactFormData): string {
     </tr>
   </table>
 </body>
-</html>
-`
+</html>`;
 }
 
 async function sendEmail(to: string, toName: string, subject: string, htmlContent: string): Promise<boolean> {
   try {
     console.log(`[Email] Sending to ${to} with subject: ${subject}`)
     console.log(`[Email] API Key present: ${!!BREVO_API_KEY}`)
+    console.log(`[Email] Recipient email valid: ${/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)}`)
     
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
@@ -207,6 +218,10 @@ async function sendEmail(to: string, toName: string, subject: string, htmlConten
         ],
         subject: subject,
         htmlContent: htmlContent,
+        replyTo: {
+          email: SENDER_EMAIL,
+          name: SENDER_NAME,
+        },
       }),
     })
 
