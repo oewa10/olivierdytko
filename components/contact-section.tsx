@@ -88,7 +88,7 @@ export function ContactSection() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-emerald-500 transition-colors">{t("contact.phone")}</h3>
-                  <a href="tel:+31620180034" className="text-muted-foreground hover:text-emerald-500 transition-colors font-medium">
+                  <a href="tel:+31620180034" className="text-muted-foreground hover:text-emerald-500 transition-colors font-medium text-xs leading-tight">
                     +31620180034
                   </a>
                 </div>
@@ -131,7 +131,7 @@ export function ContactSection() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-emerald-500 transition-colors">{t("contact.address")}</h3>
-                  <p className="text-muted-foreground font-medium">Vergiliusstraat 43, 1502 NN Zaandam</p>
+                  <p className="text-muted-foreground font-medium text-xs leading-tight">Vergiliusstraat 43, 1502 NN Zaandam</p>
                 </div>
               </div>
             </div>
