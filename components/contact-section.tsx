@@ -110,7 +110,7 @@ export function ContactSection() {
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-emerald-500 transition-colors">{t("contact.email")}</h3>
                   <a
                     href="mailto:info@oliverdytko-arbeidsbemiddeling.nl"
-                    className="text-muted-foreground hover:text-emerald-500 transition-colors font-medium text-sm break-all"
+                    className="text-muted-foreground hover:text-emerald-500 transition-colors font-medium text-xs break-all leading-tight"
                   >
                     info@oliverdytko-arbeidsbemiddeling.nl
                   </a>
