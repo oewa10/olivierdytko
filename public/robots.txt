@@ -1,0 +1,22 @@
+# Robots.txt for Oliver Dytko - Arbeidsbemiddeling
+# Allow all search engines to crawl and index the site
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.next/
+Disallow: /node_modules/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (in seconds) - be nice to servers
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://oliverdytko-arbeidsbemiddeling.nl/sitemap.xml

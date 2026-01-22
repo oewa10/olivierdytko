@@ -8,17 +8,38 @@ const _inter = Inter({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Oliver Dytko - Uitzendgroep voor de Bouw | ZZP'ers Bemiddeling",
+  title: "Oliver Dytko - Arbeidsbemiddeling voor de Bouw | ZZP'ers Bemiddeling",
   description:
     "Oliver Dytko bemiddelt vakbekwame ZZP'ers in de bouw. Grondwerkers, timmerlieden, loodgieters, elektriciens en meer. Betrouwbaar en snel.",
-  keywords: "uitzendgroep, zzp bouw, grondwerkers, timmerlieden, kozijnmonteurs, steigerwerkers, bouw bemiddeling",
+  keywords: "arbeidsbemiddeling, zzp bouw, grondwerkers, timmerlieden, kozijnmonteurs, steigerwerkers, bouw bemiddeling, Zaandam",
+  authors: [{ name: "Oliver Dytko" }],
+  creator: "Oliver Dytko",
+  publisher: "Oliver Dytko",
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   openGraph: {
-    title: "Oliver Dytko - Uitzendgroep voor de Bouw",
+    title: "Oliver Dytko - Arbeidsbemiddeling voor de Bouw",
     description: "Professionele bemiddeling van vakbekwame ZZP'ers in de bouwsector.",
     type: "website",
     locale: "nl_NL",
+    url: "https://oliverdytko-arbeidsbemiddeling.nl",
+    images: [
+      {
+        url: "https://oliverdytko-arbeidsbemiddeling.nl/about-us.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Oliver Dytko - Arbeidsbemiddeling",
+      },
+    ],
   },
-    generator: 'v0.app'
+  twitter: {
+    card: "summary_large_image",
+    title: "Oliver Dytko - Arbeidsbemiddeling voor de Bouw",
+    description: "Professionele bemiddeling van vakbekwame ZZP'ers in de bouwsector.",
+  },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
+  },
 }
 
 export default function RootLayout({
