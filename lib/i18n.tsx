@@ -154,6 +154,7 @@ const translations: Translations = {
   "contact.name": { nl: "Naam", en: "Name" },
   "contact.email": { nl: "Email", en: "Email" },
   "contact.phone": { nl: "Telefoon", en: "Phone" },
+  "contact.address": { nl: "Adres", en: "Address" },
   "contact.company": { nl: "Bedrijf", en: "Company" },
   "contact.message": { nl: "Bericht", en: "Message" },
   "contact.submit": { nl: "Versturen", en: "Send" },
