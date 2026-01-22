@@ -27,9 +27,9 @@ export function AboutSection() {
           >
             <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-2xl group">
               <img 
-                src="/professional-construction-team-collaboration-meeti.jpg" 
-                alt="Construction team" 
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                src="/about-us.jpeg" 
+                alt="Oliver Dytko" 
+                className="h-full w-full object-cover object-center scale-125 transition-transform duration-700 group-hover:scale-[1.3]" 
               />
             </div>
             <div className={`absolute -bottom-6 -left-6 h-32 w-32 bg-emerald-500/10 rounded-lg -z-10 transition-all duration-1000 delay-500 ${
